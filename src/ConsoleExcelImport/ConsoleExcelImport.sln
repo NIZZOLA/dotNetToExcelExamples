@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleExcelImport", "ConsoleExcelImport\ConsoleExcelImport.csproj", "{D2A56A30-997C-4F3A-9174-8E686A291F06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2A56A30-997C-4F3A-9174-8E686A291F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A56A30-997C-4F3A-9174-8E686A291F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A56A30-997C-4F3A-9174-8E686A291F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A56A30-997C-4F3A-9174-8E686A291F06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B316E6B-E6A0-4FB9-8D33-F6BD7D35CBD7}
+	EndGlobalSection
+EndGlobal

@@ -15,22 +15,9 @@ namespace ConsoleExcel
             GenerateFile("Despesas", "Despesas.xlsx", lista);
         }
 
-
-        static void GenerateHeader( IXLWorksheet worksheet)
-        {
-            worksheet.Cell("A1").Value = "Código";
-            worksheet.Cell("B1").Value = "Fornecedor";
-            worksheet.Cell("C1").Value = "Valor R$";
-            worksheet.Cell("D1").Value = "Vencimento";
-            worksheet.Cell("E1").Value = "Pagamento";
-            worksheet.Cell("F1").Value = "Valor Pago";
-            worksheet.Cell("G1").Value = "Descrição";
-        }
-
         static void GenerateFile(string tabName, string fileName, ICollection<DespesasModel> lista)
         {
             string filePathName = System.IO.Directory.GetCurrentDirectory() + "\\"+ fileName;
-            
             if (File.Exists(filePathName))
                 File.Delete(filePathName);
 
@@ -57,21 +44,29 @@ namespace ConsoleExcel
             }
         }
 
+        static void GenerateHeader(IXLWorksheet worksheet)
+        {
+            worksheet.Cell("A1").Value = "Código";
+            worksheet.Cell("B1").Value = "Fornecedor";
+            worksheet.Cell("C1").Value = "Valor R$";
+            worksheet.Cell("D1").Value = "Vencimento";
+            worksheet.Cell("E1").Value = "Pagamento";
+            worksheet.Cell("F1").Value = "Valor Pago";
+            worksheet.Cell("G1").Value = "Descrição";
+        }
 
         static List<DespesasModel> GenerateData()
         {
             List<DespesasModel> retorno = new List<DespesasModel>();
-            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA A", ValorDevido = 500, Vencimento = DateTime.Today.AddDays(30), Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 500 });
-            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA B", ValorDevido = 600, Vencimento = DateTime.Today.AddDays(30), Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 600 });
-            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA C", ValorDevido = 700, Vencimento = DateTime.Today.AddDays(30), Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 700 });
-            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA D", ValorDevido = 800, Vencimento = DateTime.Today.AddDays(30), Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 800 });
+            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA A", ValorDevido = 500, Vencimento = DateTime.Today.AddDays(30), 
+                Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 500 });
+            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA B", ValorDevido = 600, Vencimento = DateTime.Today.AddDays(30), 
+                Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 600 });
+            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA C", ValorDevido = 700, Vencimento = DateTime.Today.AddDays(30), 
+                Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 700 });
+            retorno.Add(new DespesasModel() { Id = 1, Fornecedor = "FABRICA D", ValorDevido = 800, Vencimento = DateTime.Today.AddDays(30), 
+                Descricao = "Conta usada para teste", Pagamento = DateTime.Today.AddDays(30), ValorPago = 800 });
             return retorno;
-        }
-
-        public static string[] GetFieldNames(Type t)
-        {
-            FieldInfo[] fieldInfos = t.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            return fieldInfos.Select(x => x.Name).ToArray();
         }
 
     }
